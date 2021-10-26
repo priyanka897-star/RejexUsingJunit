@@ -40,50 +40,46 @@ class UserValidatorTest {
 		boolean result = validator.validateLastName("more");
 		Assertions.assertFalse(result);
 	}
-	
+
 	@Test
 	void givenEmail_CheckForValidationForEmail_RetrunTrue() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateEmail("abc.xyz@bl.com");
 		Assertions.assertTrue(result);
 	}
-	
+
 	@Test
 	void givenEmail_CheckForValidationForEmail_RetrunFalse() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateEmail("abc.xyz@bl");
 		Assertions.assertFalse(result);
 	}
-	
+
 	@Test
 	void givenEmail_CheckForValidationForMobile_RetrunTrue() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateMobile("98 9808229348");
 		Assertions.assertTrue(result);
 	}
-	
+
 	@Test
 	void WithoutSpace_CheckForValidationForMobile_RetrunFalse() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateEmail("919874563214");
 		Assertions.assertFalse(result);
 	}
-	
+
 	@Test
-	void givenPassword_CheckForValidationForPassword_RetrunTrue() {
+	void givenPassword_CheckForValidationForPasswordRule2_RetrunTrue() {
 		UserValidator validator = new UserValidator();
-		boolean result = validator.validatePassword("sbvdfredvcn");
+		boolean result = validator.validatePassword("Srewoirfjkbh");
 		Assertions.assertTrue(result);
 	}
-	
+
 	@Test
-	void withLessThan8Character_CheckForValidationForPassword_ReFalse() {
+	void withoutRule2_CheckForValidationForPasswordRule2_ReturnFalse() {
 		UserValidator validator = new UserValidator();
-		boolean result = validator.validatePassword("sbvdfr");
+		boolean result = validator.validatePassword("sbvdfrjjbcxv");
 		Assertions.assertFalse(result);
 	}
-	
-	
-	
-	
 }
