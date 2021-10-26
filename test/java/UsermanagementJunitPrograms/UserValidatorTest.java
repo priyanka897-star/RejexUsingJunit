@@ -70,16 +70,16 @@ class UserValidatorTest {
 	}
 
 	@Test
-	void givenPassword_CheckForValidationForPasswordRule2_RetrunTrue() {
+	void givenPassword_CheckForValidationForPasswordRule3_RetrunTrue() {
 		UserValidator validator = new UserValidator();
-		boolean result = validator.validatePassword("Srewoirfjkbh");
+		boolean result = validator.validatePassword("Srewoirfjkbh3");
 		Assertions.assertTrue(result);
 	}
 
 	@Test
-	void withoutRule2_CheckForValidationForPasswordRule2_ReturnFalse() {
+	void withoutRule3_CheckForValidationForPasswordRule3_ReturnFalse() {
 		UserValidator validator = new UserValidator();
-		boolean result = validator.validatePassword("sbvdfrjjbcxv");
+		boolean result = validator.validatePassword("Sbvdfrjjbcxv");
 		Assertions.assertFalse(result);
 	}
 }
