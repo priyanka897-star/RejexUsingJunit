@@ -28,30 +28,44 @@ class UserValidatorTest {
 	}
 
 	@Test
-	void givenTwoLetters_CheckForValidationForLName_ReturnTrue() {
+	void givenLasrName_CheckForValidationForLName_ReturnTrue() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateLastName("More");
 		Assertions.assertTrue(result);
 	}
 
 	@Test
-	void givenTwoSmalls_CheckForValidationForLName_RerunFalse() {
+	void givenTwoSmalls_CheckForValidationForLName_RetrunFalse() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateLastName("more");
 		Assertions.assertFalse(result);
 	}
 	
 	@Test
-	void givenTwoSmalls_CheckForValidationForEmail_RerunTrue() {
+	void givenEmail_CheckForValidationForEmail_RetrunTrue() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateEmail("abc.xyz@bl.com");
 		Assertions.assertTrue(result);
 	}
 	
 	@Test
-	void givenTwoSmalls_CheckForValidationForEmail_RerunFalse() {
+	void givenEmail_CheckForValidationForEmail_RetrunFalse() {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateEmail("abc.xyz@bl");
+		Assertions.assertFalse(result);
+	}
+	
+	@Test
+	void givenEmail_CheckForValidationForMobile_RetrunTrue() {
+		UserValidator validator = new UserValidator();
+		boolean result = validator.validateMobile("98 9808229348");
+		Assertions.assertTrue(result);
+	}
+	
+	@Test
+	void WithoutSpace_CheckForValidationForMobile_RetrunFalse() {
+		UserValidator validator = new UserValidator();
+		boolean result = validator.validateEmail("919874563214");
 		Assertions.assertFalse(result);
 	}
 	
