@@ -9,5 +9,20 @@ class UserValidatorTest {
 		UserValidator validator = new UserValidator();
 		boolean result = validator.validateFirstName("Priyanka");
 		Assertions.assertTrue(result);
+		
 	}
+	
+	  @Test
+	    void givenFirstLetterSmall_CheckForValidation_ReturnFalse() {
+		  	UserValidator validator = new UserValidator();
+	        boolean result =  validator.validateFirstName("sravanthi");
+	        Assertions.assertFalse(result);
+	    }
+
+	    @Test
+	    void givenTwoLetters_CheckForValidation_ReturnFalse() {
+	    	UserValidator validator = new UserValidator();
+	        boolean result =  validator.validateFirstName("Sr");
+	        Assertions.assertFalse(result);
+	    }
 }
