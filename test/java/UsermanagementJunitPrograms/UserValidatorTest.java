@@ -69,4 +69,21 @@ class UserValidatorTest {
 		Assertions.assertFalse(result);
 	}
 	
+	@Test
+	void givenPassword_CheckForValidationForPassword_RetrunTrue() {
+		UserValidator validator = new UserValidator();
+		boolean result = validator.validatePassword("sbvdfredvcn");
+		Assertions.assertTrue(result);
+	}
+	
+	@Test
+	void withLessThan8Character_CheckForValidationForPassword_ReFalse() {
+		UserValidator validator = new UserValidator();
+		boolean result = validator.validatePassword("sbvdfr");
+		Assertions.assertFalse(result);
+	}
+	
+	
+	
+	
 }
