@@ -9,4 +9,5 @@ public class EmailValidationMain {
 		Pattern pattern = Pattern.compile(EMAIL);
 		return pattern.matcher(email1).matches();
 	}
+	
 }
